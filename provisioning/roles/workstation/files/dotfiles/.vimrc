@@ -14,18 +14,16 @@ Bundle 'digitaltoad/vim-jade.git'
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'mileszs/ack.vim.git'
+Bundle 'pangloss/vim-javascript'
+Bundle 'plasticboy/vim-markdown'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'scrooloose/syntastic.git'
+Bundle 'thoughtbot/vim-rspec.git'
+Bundle 'tpope/vim-commentary.git'
+Bundle 'tpope/vim-dispatch.git'
 Bundle 'tpope/vim-endwise.git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-commentary.git'
-Bundle 'tpope/vim-dispatch.git'
-Bundle 't9md/vim-ruby-xmpfilter'
-Bundle 'pangloss/vim-javascript'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'groenewege/vim-less'
-Bundle 'thoughtbot/vim-rspec.git'
 
 " Prevents some security exploits
 set modelines=0
@@ -90,11 +88,6 @@ set number numberwidth=2
 " Visual
 set showmatch
 
-" Show invisible characters
-" set list
-" Make them look like in TextMate
-" set listchars=tab:▸\ ,eol:¬
-
 " status line
 set laststatus=2
 set statusline=%t       "tail of the filename
@@ -119,28 +112,6 @@ end
 
 colorscheme Tomorrow-Night
 
-highlight clear SignColumn
-highlight VertSplit    ctermbg=236
-highlight ColorColumn  ctermbg=236
-highlight LineNr       ctermbg=236 ctermfg=240
-highlight CursorLineNr ctermbg=236 ctermfg=240
-highlight CursorLine   ctermbg=236
-highlight CursorColumn ctermbg=236
-highlight StatusLineNC ctermbg=238 ctermfg=0
-highlight StatusLine   ctermbg=240 ctermfg=12
-highlight IncSearch    ctermbg=0   ctermfg=3
-highlight Search       ctermbg=0   ctermfg=9
-highlight Visual       ctermbg=3   ctermfg=0
-highlight Pmenu        ctermbg=240 ctermfg=12
-highlight PmenuSel     ctermbg=0   ctermfg=3
-highlight SpellBad     ctermbg=0   ctermfg=1
-
-" highlight the status bar when in insert mode
-if version >= 700
-  au InsertEnter * hi StatusLine ctermfg=235 ctermbg=2
-  au InsertLeave * hi StatusLine ctermbg=240 ctermfg=12
-endif
-
 " Setup font depending on the OS
 if has('gui_macvim')
   set guifont=Monaco:h13
@@ -153,10 +124,6 @@ set guioptions-=T
 
 " Show vertical line at 100th column
 set colorcolumn=100
-
-" Highlight current line and column
-" hi CursorLine guibg=Gray20
-" hi CursorColumn ctermbg=0 guibg=Gray20
 
 " NETRW options
 "  - vertical splitting for preview
@@ -230,15 +197,6 @@ nnoremap <silent><Leader>c :set cursorline! cursorcolumn!<CR>
 " NERDTree
 nnoremap <silent><Leader>t :NERDTreeToggle<cr>
 nnoremap <silent><Leader>f :NERDTreeFind<cr>
-
-" xmpfilter (gem install rcodetools)
-nmap <buffer> <F5> <Plug>(xmpfilter-run)
-xmap <buffer> <F5> <Plug>(xmpfilter-run)
-imap <buffer> <F5> <Plug>(xmpfilter-run)
-
-nmap <buffer> <F4> <Plug>(xmpfilter-mark)
-xmap <buffer> <F4> <Plug>(xmpfilter-mark)
-imap <buffer> <F4> <Plug>(xmpfilter-mark)
 
 " rspec.vim
 let g:rspec_command = 'Dispatch bin/rspec {spec}'
