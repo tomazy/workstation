@@ -1,0 +1,9 @@
+---
+- hosts: all
+  # pre_tasks:
+  #   - name: Upgrade packages
+  #     apt: upgrade=yes update_cache=yes
+  #     sudo: yes
+  roles:
+    - { role: ruby, ruby_version: '2.1.2' }
+    - { role: workstation }

@@ -1,0 +1,27 @@
+- name: Install default packages
+  apt: name={{item}} state=installed
+  sudo: yes
+  with_items:
+    - tree
+    - git
+    - curl
+    - wget
+    - vim
+    - tmux
+    - ack-grep
+
+- name: Synch dotfiles
+  synchronize:
+    src=dotfiles/
+    dest=~/
+    archive=no
+    recursive=yes
+
+- name: Setup Vundle
+  git: >
+    repo=https://github.com/gmarik/Vundle.vim.git
+    dest=~/.vim/bundle/Vundle.vim
+    update=no
+
+- name: Install Vim plugins
+  command: vim +PluginInstall +qall
