@@ -11,7 +11,7 @@
     - ack-grep
 
 - name: Synch dotfiles
-  synchronize:
+  synchronize: >
     src=dotfiles/
     dest=~/
     archive=no

@@ -1,9 +1,18 @@
 ---
 - hosts: all
-  # pre_tasks:
-  #   - name: Upgrade packages
-  #     apt: upgrade=yes update_cache=yes
-  #     sudo: yes
+  pre_tasks:
+    - name: Upgrade packages
+      apt: upgrade=yes update_cache=yes
+      sudo: yes
+    - command: locale-gen en_US en_US.UTF-8
+      sudo: yes
+    - command: dpkg-reconfigure locales
+      sudo: yes
+    - lineinfile: >
+        dest=/etc/default/locale
+        state=present
+        line='LC_ALL="en_US.UTF-8"'
+      sudo: yes
   roles:
-    - { role: ruby, ruby_version: '2.1.2' }
     - { role: workstation }
+    - { role: ruby, ruby_version: '2.1.2' }
