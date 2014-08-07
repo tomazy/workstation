@@ -31,10 +31,9 @@
 - name: Install ruby {{ruby_version}}
   command: >
     chdir=/tmp
-    ruby-install ruby {{ruby_version}}
-    creates=/home/vagrant/.rubies/ruby-{{ruby_version}}
+    ruby-install ruby {{ruby_version}} --no-reinstall --src-dir /tmp
 
-- name: Install chruby
+- name: Download chruby
   get_url: >
     url=https://github.com/postmodern/chruby/archive/v0.3.8.tar.gz
     dest=/tmp/chruby-0.3.8.tar.gz
