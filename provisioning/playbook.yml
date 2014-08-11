@@ -18,8 +18,8 @@
       sudo: yes
 
   roles:
+    - { role: tomazy.postgresql, postgresql_ext_install_dev_headers: yes }
     - { role: ruby, ruby_version: "{{ ruby_version }}" }
-    - { role: tomazy.postgresql }
     - { role: nodejs }
     - { role: workstation }
 

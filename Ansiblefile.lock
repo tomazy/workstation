@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/tomazy/postgresql
   ref: sudo-fix
-  sha: 115426cf6efc4a4d70e69c551fc4d37c2d71ab19
+  sha: 378f115b931f4c6ba390e200f0688ab9d4ed2a26
   specs:
     tomazy.postgresql (0.0.0)
 
