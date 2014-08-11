@@ -10,12 +10,10 @@
     - tmux
     - ack-grep
 
-- name: Synch dotfiles
-  synchronize: >
+- name: Sync dotfiles
+  copy: >
     src=dotfiles/
     dest=~/
-    archive=no
-    recursive=yes
 
 - name: Setup Vundle
   git: >
