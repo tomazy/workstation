@@ -16,3 +16,4 @@
   roles:
     - { role: workstation }
     - { role: ruby, ruby_version: '2.1.2' }
+    - { role: nodejs }

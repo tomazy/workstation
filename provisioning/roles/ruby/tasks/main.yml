@@ -58,12 +58,12 @@
 
 - name: Enable chroot
   lineinfile: >
-    dest=~/.bashrc
+    dest=~/.profile
     state=present
     line="source /usr/local/share/chruby/chruby.sh"
 
 - name: Use ruby {{ ruby_version }}
   lineinfile: >
-    dest=~/.bashrc
+    dest=~/.profile
     state=present
     line="source /usr/local/share/chruby/auto.sh"
