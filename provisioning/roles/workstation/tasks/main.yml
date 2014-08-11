@@ -1,3 +1,4 @@
+---
 - name: Install default packages
   apt: name={{item}} state=installed
   sudo: yes
@@ -23,3 +24,6 @@
 
 - name: Install Vim plugins
   command: vim +PluginInstall +qall
+
+- name: Working dir
+  file: path=~/workspace state=directory
