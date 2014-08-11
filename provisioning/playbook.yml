@@ -37,6 +37,7 @@
         - pry
         - rails
         - guard
+        - tmuxinator
 
     - name: Find current npm
       shell: sudo -iu $USER which npm
