@@ -1,7 +1,9 @@
 ---
 - hosts: all
   vars:
-    - ruby_version: 2.1.2
+    ruby_versions:
+      - '2.1.2'
+    ruby_default: '2.1.2'
 
   pre_tasks:
     - name: Upgrade packages
@@ -19,7 +21,7 @@
 
   roles:
     - { role: tomazy.postgresql, postgresql_ext_install_dev_headers: yes }
-    - { role: ruby, ruby_version: "{{ ruby_version }}" }
+    - { role: ruby }
     - { role: nodejs }
     - { role: workstation }
 

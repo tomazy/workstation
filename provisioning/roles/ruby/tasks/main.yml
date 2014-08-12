@@ -35,10 +35,11 @@
     sudo make install
   when: not ruby_install.stat.exists
 
-- name: Install ruby {{ruby_version}}
+- name: Install rubies
   command: >
     chdir=/tmp
-    ruby-install ruby {{ruby_version}} --no-reinstall --src-dir /tmp
+    ruby-install ruby {{item}} --no-reinstall --src-dir /tmp
+  with_items: ruby_versions
 
 - name: Download chruby
   get_url: >
@@ -57,11 +58,11 @@
     creates=/usr/local/share/chruby
     sudo make install
 
-- name: Set default ruby to {{ ruby_version }}
+- name: Set default ruby to {{ ruby_default }}
   lineinfile: >
     dest=~/.ruby-version
     state=present
-    line="ruby-{{ruby_version}}" create=yes
+    line="ruby-{{ruby_default}}" create=yes
 
 - name: Enable chroot
   lineinfile: >
@@ -69,7 +70,7 @@
     state=present
     line="source /usr/local/share/chruby/chruby.sh"
 
-- name: Use ruby {{ ruby_version }}
+- name: Use ruby {{ ruby_default }}
   lineinfile: >
     dest=~/.profile
     state=present
