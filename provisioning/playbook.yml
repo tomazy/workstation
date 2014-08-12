@@ -24,6 +24,7 @@
     - { role: ruby }
     - { role: nodejs }
     - { role: java }
+    - { role: android }
     - { role: workstation }
     - { role: gui }
 
@@ -55,3 +56,4 @@
       with_items:
         - bower
         - grunt-cli
+        - cordova
