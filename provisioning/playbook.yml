@@ -23,6 +23,7 @@
     - { role: tomazy.postgresql, postgresql_ext_install_dev_headers: yes }
     - { role: ruby }
     - { role: nodejs }
+    - { role: java }
     - { role: workstation }
     - { role: gui }
 
