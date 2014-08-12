@@ -24,6 +24,7 @@
     - { role: ruby }
     - { role: nodejs }
     - { role: workstation }
+    - { role: gui }
 
   tasks:
     - name: Find current gem
