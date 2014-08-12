@@ -4,12 +4,21 @@
   sudo: yes
   with_items:
     - build-essential
+    - curl
+    - git-core
+    - libcurl4-openssl-dev
     - libffi-dev
     - libgdbm-dev
     - libncurses5-dev
     - libreadline-dev
+    - libreadline6-dev
+    - libsqlite3-dev
     - libssl-dev
+    - libxml2-dev
+    - libxslt1-dev
+    - libyaml-dev
     - libyaml-dev 
+    - sqlite3
     - zlib1g-dev
 
 - name: Determine whether ruby-install is installed
