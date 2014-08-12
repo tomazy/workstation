@@ -22,8 +22,13 @@
     dest=~/.vim/bundle/Vundle.vim
     update=no
 
+- name: Determine whether vim plugins are already installed
+  stat: path=~/.vim/bundle/nerdtree
+  register: plugins
+
 - name: Install Vim plugins
   command: vim +PluginInstall +qall
+  when: not plugins.stat.exists
 
 - name: Working dir
   file: path=~/workspace state=directory

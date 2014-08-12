@@ -1,6 +1,7 @@
 ---
 - name: Dependencies
   apt: name={{ item }} state=installed
+  sudo: yes
   with_items:
     - build-essential
     - git

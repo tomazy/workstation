@@ -12,21 +12,28 @@
     - libyaml-dev 
     - zlib1g-dev
 
+- name: Determine whether ruby-install is installed
+  stat: path=/usr/local/bin/ruby-install
+  register: ruby_install
+
 - name: Download ruby-install
   get_url: url=https://github.com/postmodern/ruby-install/archive/v0.4.3.tar.gz
            dest=/tmp/ruby-install-v0.4.3.tar.gz
+  when: not ruby_install.stat.exists
 
 - name: Extract ruby-install
   command: >
     chdir=/tmp
     tar -zxf ruby-install-v0.4.3.tar.gz
     creates=/tmp/ruby-install-0.4.3
+  when: not ruby_install.stat.exists
 
 - name: Install ruby-install
   command: >
     chdir=/tmp/ruby-install-0.4.3 
     creates=/usr/local/bin/ruby-install
     sudo make install
+  when: not ruby_install.stat.exists
 
 - name: Install ruby {{ruby_version}}
   command: >
