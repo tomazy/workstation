@@ -12,6 +12,7 @@
     - libncurses5:i386
     - libstdc++6:i386
     - lib32z1
+    - libgl1-mesa-dev
 
 - name: Create development directory
   file: path=~/development state=directory
