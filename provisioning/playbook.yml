@@ -31,10 +31,10 @@
     - { role: ruby }
     - { role: nodejs }
     - { role: java }
-    - { role: android }
     - { role: workstation }
     - { role: gui }
     - { role: chrome }
+    - { role: android }
 
   tasks:
     - name: Find current gem
