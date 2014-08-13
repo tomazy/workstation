@@ -23,6 +23,7 @@
     - { role: android }
     - { role: workstation }
     - { role: gui }
+    - { role: chrome }
 
   tasks:
     - name: Find current gem
