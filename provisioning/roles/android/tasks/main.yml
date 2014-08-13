@@ -89,3 +89,8 @@
   lineinfile: >
     dest=~/.profile
     line="export PATH=${PATH}:$ANT_HOME/bin"
+
+- name: Install desktop shortcut
+  copy: >
+    src=android-studio.desktop
+    dest=~/Desktop/
