@@ -71,7 +71,8 @@
   lineinfile: >
     dest=~/.ruby-version
     state=present
-    line="ruby-{{ruby_default}}" create=yes
+    line="ruby-{{ruby_default}}"
+    create=yes
 
 - name: Enable chroot
   lineinfile: >
