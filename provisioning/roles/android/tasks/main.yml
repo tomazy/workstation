@@ -11,6 +11,7 @@
     - libc6:i386
     - libncurses5:i386
     - libstdc++6:i386
+    - lib32z1
 
 - name: Create development directory
   file: path=~/development state=directory
