@@ -24,6 +24,7 @@
         dest=/etc/localtime
         src=/usr/share/zoneinfo/Asia/Kuala_Lumpur
         state=link
+        force=yes
 
   roles:
     - { role: tomazy.postgresql, postgresql_ext_install_dev_headers: yes }
