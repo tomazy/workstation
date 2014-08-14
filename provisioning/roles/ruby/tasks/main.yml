@@ -74,7 +74,7 @@
     sudo make install
   when: not chruby.stat.exists
 
-- name: Set default ruby to {{ ruby_default }}
+- name: Set default ruby
   lineinfile: >
     dest=~/.ruby-version
     state=present
@@ -87,7 +87,7 @@
     state=present
     line="source /usr/local/share/chruby/chruby.sh"
 
-- name: Use ruby {{ ruby_default }}
+- name: Auto load latest ruby
   lineinfile: >
     dest=~/.profile
     state=present
