@@ -38,6 +38,7 @@
     - { role: java }
     - { role: workstation }
     - { role: gui }
+    - { role: virtualbox }
     - { role: chrome }
     - { role: android }
 

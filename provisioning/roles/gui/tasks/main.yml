@@ -4,9 +4,6 @@
   sudo: yes
   with_items:
     - lubuntu-desktop
-    - virtualbox-guest-dkms
-    - virtualbox-guest-utils
-    - virtualbox-guest-x11
 
 - name: Configure X11
   sudo: yes
