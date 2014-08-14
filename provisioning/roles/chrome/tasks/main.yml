@@ -6,7 +6,7 @@
 - name: Setup repository
   sudo: yes
   lineinfile: >
-    dest=/etc/apt/sources.list.d/google.list
+    dest=/etc/apt/sources.list.d/google-chrome.list
     create=yes
     line='deb http://dl.google.com/linux/chrome/deb/ stable main'
 
