@@ -26,6 +26,11 @@
         state=link
         force=yes
 
+    - name: Setup host name (workstation)
+      sudo: yes
+      shell: >
+        echo workstation > /etc/hostname
+
   roles:
     - { role: tomazy.postgresql, postgresql_ext_install_dev_headers: yes }
     - { role: ruby }
