@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Name=Android Studio
-GenericName=Android Studio
-Comment=Android Studio 0.8
-Type=Application
-Categories=Application;
-Icon=/home/vagrant/development/android-studio/bin/androidstudio.ico
-Exec=/home/vagrant/development/android-studio/bin/studio.sh

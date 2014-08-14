@@ -91,6 +91,6 @@
     line="export PATH=${PATH}:$ANT_HOME/bin"
 
 - name: Install desktop shortcut
-  copy: >
-    src=android-studio.desktop
-    dest=~/Desktop/
+  template: >
+    src=android-studio.desktop.j2
+    dest=~/Desktop/android-studio.desktop
