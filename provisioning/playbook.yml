@@ -57,6 +57,7 @@
         - rails
         - guard
         - tmuxinator
+        - sass
 
     - name: Find current npm
       shell: sudo -iu $USER which npm
