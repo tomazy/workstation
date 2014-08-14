@@ -10,6 +10,7 @@
     - vim
     - tmux
     - ack-grep
+    - vim-gtk
 
 - name: Sync dotfiles
   copy: >
