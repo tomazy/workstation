@@ -1,0 +1,3 @@
+[submodule "provisioning"]
+	path = provisioning
+	url = git@github.com:tomazy/workstation-playbook.git

@@ -118,6 +118,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = 'provisioning/playbook.yml'
+    ansible.groups = {
+      'workstation' => ['default']
+    }
+    ansible.tags = [
+      'postgresql',
+      'ruby',
+      'nodejs',
+      'workstation',
+      'gui',
+      'chrome',
+    ]
   end
 
   #
@@ -131,6 +142,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #
 
   if Vagrant.has_plugin?("vagrant-cachier")
+    config.cache.auto_detect = false
     config.cache.scope = :box
+    config.cache.enable :apt
   end
 end
