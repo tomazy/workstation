@@ -122,6 +122,24 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ansible.groups = {
       'workstation' => ['default']
     }
+
+    ansible.extra_vars = {
+
+      postgresql_users: [
+        {
+          name: 'vagrant'
+        }
+      ],
+
+      postgresql_user_privileges: [
+        {
+          name: 'vagrant',
+          db: 'postgres',
+          role_attr_flags: "CREATEDB",
+        }
+      ]
+    }
+
     ansible.tags = [
       'postgresql',
       'ruby',
