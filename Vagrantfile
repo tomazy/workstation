@@ -124,6 +124,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     ansible.extra_vars = {
+      ruby_versions: ['2.1.2'],
+      ruby_default: '2.1.2',
 
       postgresql_users: [
         {
