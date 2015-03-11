@@ -143,6 +143,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
 
     ansible.tags = [
+      'update-packages',
+      'locale',
       'postgresql',
       'ruby',
       'nodejs',
